@@ -5,7 +5,6 @@ local WindowHandler = {}
 local function generateConfig(rowPadding, colPadding)
     rowPadding = rowPadding or 6
     colPadding = colPadding or 6
-    local vimStats = vim.api.nvim_list_uis()[1]
     local w = vim.o.columns
     local h = vim.o.lines
 
