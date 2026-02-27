@@ -6,8 +6,8 @@ local function generateConfig(rowPadding, colPadding)
     rowPadding = rowPadding or 6
     colPadding = colPadding or 6
     local vimStats = vim.api.nvim_list_uis()[1]
-    local w = vimStats.width
-    local h = vimStats.height
+    local w = vim.o.columns
+    local h = vim.o.lines
 
     local rowHalfPadding = math.floor(rowPadding / 2)
     local colHalfPadding = math.floor(colPadding / 2)
@@ -22,7 +22,6 @@ local function generateConfig(rowPadding, colPadding)
 end
 
 function WindowHandler:new(rowPadding, colPadding)
-
     local newWindow = {
         config = generateConfig(rowPadding, colPadding),
         rowPadding = rowPadding,
@@ -89,4 +88,3 @@ function WindowHandler:onResize()
 end
 
 return WindowHandler
-
