@@ -23,13 +23,13 @@ local instructions = {
     "intended to help you improve your vim proficiency.",
     "delete a line to select the line.  If you delete a difficulty,",
     "it will select that difficulty, but if you delete a game it ",
-    "will start the game."
+    "will start the game.",
 }
 
 local credits = {
     "",
     "",
-    "Created by ThePrimeagen",
+    "Created by ThePrimeagen. Extended by Gavin",
     "Brandoncc",
     "polarmutex",
     "",
@@ -63,8 +63,7 @@ function Menu:new(window, onResults)
 end
 
 local function getMenuLength()
-    return #types.games + #types.difficulty + #gameHeader +
-        #difficultyHeader + #credits
+    return #types.games + #types.difficulty + #gameHeader + #difficultyHeader + #credits
 end
 
 local function getTableChanges(lines, compareSet, startIdx)
@@ -138,7 +137,7 @@ end
 function Menu:render()
     self.window.buffer:clearGameLines()
 
-    local lines = { }
+    local lines = {}
     for idx = 1, #gameHeader do
         table.insert(lines, gameHeader[idx])
     end
@@ -167,4 +166,3 @@ function Menu:close()
 end
 
 return Menu
-
