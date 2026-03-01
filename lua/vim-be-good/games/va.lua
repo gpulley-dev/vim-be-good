@@ -43,9 +43,8 @@ end
 function VaRound:checkForWin()
     local lines = self.window.buffer:getGameLines()
     local trimmed = GameUtils.trimLines(lines)
-    local lowercased = trimmed:lower()
 
-    log.info("VaRound:checkForWin", vim.inspect(lowercased))
+    log.info("VaRound:checkForWin", vim.inspect(trimmed))
 
     if #trimmed <= 1 then
         return false
@@ -53,7 +52,7 @@ function VaRound:checkForWin()
 
     winner = false
     local first_line = trimmed[1]
-    local last_line = trimmed[#trimmed - 1]
+    local last_line = trimmed[#trimmed]
     if first_line == "bar[" and last_line == "]bar" then
         winner = true
         vim.cmd("stopinsert")
@@ -78,8 +77,8 @@ function VaRound:render()
     local sizeOfContainer = math.random(math.floor(linesAfterInstructions / 2))
     -- Minimum is three to include two lines for brackets and one line for at least one item
     lines[insertionIndex] = "["
-    for idx = 1, sizeOfContainer - 1 do
-        lines[insertionIndex + idx] = "   " .. GameUtils.getRandowmWord() .. ","
+    for idx = 1, sizeOfContainer do
+        lines[insertionIndex + idx] = "   " .. GameUtils.getRandomWord() .. ","
     end
     lines[insertionIndex + sizeOfContainer] = "]"
 
