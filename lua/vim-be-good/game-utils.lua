@@ -1,4 +1,3 @@
-
 local difficultyToTime = {
     ["noob"] = 100000,
     ["easy"] = 10000,
@@ -71,7 +70,7 @@ local extraWords = {
     "zar",
 }
 
-local spaceByte = string.byte(' ')
+local spaceByte = string.byte(" ")
 
 local function compareTable(a, b)
     local found = true
@@ -158,7 +157,6 @@ local function trimLines(lines)
     return trimmed
 end
 
-
 local function filterEmptyLines(lines)
     return vim.tbl_filter(function(line)
         return line ~= ""
@@ -178,4 +176,3 @@ return {
     trimLines = trimLines,
     filterEmptyLines = filterEmptyLines,
 }
-
