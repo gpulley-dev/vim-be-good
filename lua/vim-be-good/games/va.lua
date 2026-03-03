@@ -44,7 +44,7 @@ function VaRound:checkForWin()
     local lines = self.window.buffer:getGameLines()
     local trimmed = GameUtils.trimLines(lines)
 
-    for i = 1, #trimmed do
+    for i = #trimmed, 1, -1 do
         if trimmed[i] == "" then
             table.remove(trimmed, i)
         end
