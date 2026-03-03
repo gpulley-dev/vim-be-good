@@ -1,10 +1,10 @@
 local GameUtils = require("vim-be-good.game-utils")
 local log = require("vim-be-good.log")
-local gameLineCount = 30
+local gameLineCount = 15
 
 local instructions = {
     'Type the word "bar" before the opening brackets and after the closing brackets.',
-    'Use "va" and "%" to move to the brackets and between them respectively',
+    'Use "va[" and "%" to move to the brackets and between them respectively',
     "",
     "e.g.:",
     "[                    bar[       ",
@@ -13,6 +13,7 @@ local instructions = {
     "   item3                item3",
     "]                    ]bar",
     "",
+    "-------------------------------------------------------------------------------",
 }
 
 local VaRound = {}
