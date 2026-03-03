@@ -59,7 +59,7 @@ function VaRound:checkForWin()
     winner = false
     local first_line = trimmed[1]
     local last_line = trimmed[#trimmed]
-    if first_line == "bar[\n" and last_line == "]bar\n" then
+    if first_line == "bar[" and last_line == "]bar" then
         winner = true
         vim.cmd("stopinsert")
     end
