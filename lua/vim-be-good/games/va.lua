@@ -46,6 +46,12 @@ function VaRound:checkForWin()
 
     log.info("VaRound:checkForWin", vim.inspect(trimmed))
 
+    for i = 1, #trimmed do
+        if trimmed[1] == "" then
+            table.remove(trimmed, i)
+        end
+    end
+
     if #trimmed <= 1 then
         return false
     end
