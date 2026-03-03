@@ -1,6 +1,6 @@
 local GameUtils = require("vim-be-good.game-utils")
 local log = require("vim-be-good.log")
-local gameLineCount = 15
+local gameLineCount = 25
 
 local instructions = {
     'Type the word "bar" before the opening brackets and after the closing brackets.',
@@ -80,7 +80,7 @@ function VaRound:render()
         cursorIdx = math.random(math.floor(linesAfterInstructions / 2), linesAfterInstructions)
     end
 
-    local sizeOfContainer = math.random(1, math.floor(linesAfterInstructions))
+    local sizeOfContainer = math.random(3, math.floor(linesAfterInstructions))
     -- Minimum is three to include two lines for brackets and one line for at least one item
     lines[insertionIndex] = "["
     for idx = 1, sizeOfContainer do
